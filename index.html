@@ -1,0 +1,195 @@
+<html>
+    <!--Credit to the JN team, who wrote the code this was based off-->
+    <!--Extra special thanks to Blizz, for their generous permission and assistance-->
+    <title>Forever & Ever Expression Previewer</title>
+    <head>
+        <link rel="stylesheet" href="expression_previewer.css"/>
+        <script src="jquery.js" type="text/javascript"></script>
+        <script src="matrix.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <br><br>
+        <div class="split left">
+            <div class="centered">
+                <!--User options-->
+                <div class="controls">
+                    <!--Spritecode output-->
+                    <span class="bold">Showing:</span>
+                    <br>
+                    <span id="sprite_code" class="bold highlight">N/A</span>
+                    <br>
+                    <span class="bold interactive" onclick="cc(this)" title="Copy sprite code to clipboard">[copy]</span>
+                    <span class="bold interactive red" onclick="reset_canvas()" title="Reset">[reset]</span>
+                    <br><br>
+
+                    <!--Spritecode input-->
+                    <div class="property_container">
+                        <span class="bold">View:</span>
+                        <br>
+                        <input id="input_code" type="text" placeholder="Enter a sprite code">
+                        <img id="sprite_code_status" title="Valid spritecode!" src="./img/spritecode_status/valid.png"></img>
+                    </div>
+
+                    <!--Eyebrows-->
+                    <span class="bold">Eyebrows</span>
+                    <br>
+                    <select id="eyebrows_control" onchange="ul('eyebrows')">
+                        <option selected value="a">normal</option>
+                        <option value="b">sad</option>
+                        <option value="c">angry</option>
+                        <option value="d">SUS</option>
+                        <option value="e">arched</option>
+                        <option value="f">furrowed</option>
+                        <option value="g">unamused</option>
+                        <option value="n">numb</option>
+                    <select>
+                    
+                    
+                    <span class="bold">Backarm</span>
+                    <br>
+                    <select id="backarms_control" onchange="ul('backarms')">
+                        <option selected value="a">unknown</option>
+                        <option value="b">empty</option>
+                    </select>
+                    
+
+                    <!--ARMS-->
+                    <span class="bold">Arms</span>
+                    <br>
+                    <select id="arms_control" onchange="ul('arms')">
+                        <option selected value="a">folded</option>
+                        <option value="b">left-index-point</option>
+                        <option value="c">cookie</option>
+                        <option value="d">cb</option>
+                        <option value="e">double-point</option>
+                        <option value="f">left-table-rest</option>
+                        <option value="g">left-fingers-touch</option>
+                        <option value="h">empty</option>             
+                    <select>
+                    
+                    
+                    <!--ARMS2-->
+                    <span class="bold">Arms2</span>
+                    <br>
+                    <select id="arms2_control" onchange="ul('arms2')">
+                        <option selected value="a">folded</option>
+                        <option value="b">right-table-rest</option>
+                        <option value="c">right-fist</option>
+                        <option value="d">right-finger-pup-ext</option>
+                        <option value="e">double-point</option>
+                        <option value="f">hand-restingtop</option>
+                        <option value="g">empty</option>
+                        <option value="h">crossed-thonk</option>
+                    <select>
+                    
+
+                    <!--Eyes-->
+                    <span class="bold">Eyes</span>
+                    <br>
+                    <select id="eyes_control" onchange="ul('eyes')">
+                        <option selected value="a">normal-eyes</option>
+                        <option value="b">look-left</option>
+                        <option value="c">closed-happy</option>
+                        <option value="d">wink</option>
+                        <option value="e">waaaa</option>
+                        <option value="f">dead</option>
+                        <option value="g">crazy</option>
+                        <option value="h">open-wide</option>
+                        <option value="i">squint</option>
+                        <option value="j">f1</option>
+                        <option value="k">semi-wide</option>
+                        <option value="l">closed-sad</option>
+                        <option value="m">averted</option>
+                        <option value="n">sparkle</option>
+                        <option value="o">unamused-eyes</option>
+                    <select>
+                    
+                    
+                    <!--HAIR-->
+                    <!--span class="bold">Hair (Obsolete)</span>
+                    <br>
+                    <select id="hair_control" onchange="ul('hair')">
+                        <option selected value="b">b</option>
+                    <select-->
+                    
+
+                    <!--Mouth-->
+                    <span class="bold">Mouth</span>
+                    <br>
+                    <select id="mouth_control" onchange="ul('mouth')">
+                        <option selected value="a">normal-smile</option>
+                        <option value="b">weird</option>
+                        <option value="c">delicate-agape</option>
+                        <option value="d">ajar</option>
+                        <option value="e">big-open</option>
+                        <option value="f">frown</option>
+                        <option value="g">waaaa</option>
+                        <option value="h">^</option>
+                        <option value="i">blep</option>
+                        <option value="j">glub</option>
+                        <option value="k">big-smile</option>
+                        <option value="l">big-frown</option>
+                        <option value="m">drool</option>
+                        <option value="n">drool-frown</option>
+                        <option value="o">open</option>
+                        <option value="p">pout</option>
+                        <option value="q">GRIN</option>
+                        <option value="r">unamused</option>
+                        <option value="s">O_MOUTH</option>
+                    <select>
+                    
+                    
+                    <!--TEARS-->
+                    <span class="bold">Tears</span>
+                    <br>
+                    <select id="tears_control" onchange="ul('tears')">
+                            <option selected value="">(none)</option>
+                            <option value="e">d_tears</option>
+                            <option value="f">happy_d_tears</option>
+                            <option value="g">pooled_tears</option>
+                            <option value="h">sad_d_tears</option>
+                            <option value="i">crumbs</option>
+                            <option value="j">sweat-drop</option>
+                    </select>
+                    
+
+                    <!--Blush-->
+                    <span class="bold">Blush</span>
+                    <br>
+                    <select id="blush_control" onchange="ul('blush')">
+                        <option selected value="">(none)</option>
+                        <option value="a">default_cheeks</option>
+                        <option value="b">blushing</option>
+                        <option value="c">gloomy</option>
+                        <option value="d">eye-redness</option>
+                    </select>                    
+                </div>
+            </div>
+        </div>
+        <div class="split right">
+            <!--Build A Sayori! (Sounds like a carnival game)-->>
+            <div class="centered tl">
+                
+                <img id="back_layer" class="image_layer" src="./img/backarms/back-sleeve.png"/>
+                <img id="back_layer" class="image_layer" src="./img/body/1.png"/> <!--Body, clothes, hair back, nose-->
+                <img id="table_layer" class="image_layer" src="./img/table/desk.png"/> <!--Table-->
+                <img id="table_layer" class="image_layer" src="./img/table/desk_sh.png"/>
+                <img id="arms_layer" class="image_layer" src="./img/arms/folded.png"/>
+                <img id="arms2_layer" class="image_layer" src="./img/arms2/folded.png"/>
+                <img id="backarms_layer" class="image_layer" src="./img/backarms/unknown.png"/>
+                <img id="hair_layer" class="image_layer" src="./img/hair/b.png"/> <!--Hair-->
+                <img id="blush_layer" class="image_layer" src="./img/blush/empty.png"/> <!--Blush-->
+                <img id="eyes_layer" class="image_layer" src="./img/eyes/normal-eyes.png"/> <!--Eyes-->
+                <img id="tears_layer" class="image_layer" src="./img/tears/empty.png"/> <!--Tears-->
+                <img id="eyebrows_layer" class="image_layer" src="./img/eyebrows/normal.png"/> <!--Eyebrows-->
+                <img id="mouth_layer" class="image_layer" src="./img/mouth/normal-smile.png"/> <!--Mouth-->
+                <noscript>
+                    <img class="image_layer" src="./img/enable_js.png"/>
+                </noscript>
+                
+                
+            </div>
+        </div>
+        
+    </body>
+</html>
